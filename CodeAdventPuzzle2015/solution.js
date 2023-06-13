@@ -2,8 +2,8 @@ const fs = require('fs');
 // Base Floor = 0
 // Open Paranthesis '(' = + 1 floor
 // Closed Paranthesis: ) = -1 floor
-let baseFloor = 0;
-console.time('Challenge')
+
+
 
 const fileData = fs.readFileSync("input.txt").toString().split('')
 // Transform string to array
@@ -15,12 +15,12 @@ const fileData = fs.readFileSync("input.txt").toString().split('')
 
 // -----------------------------------------
 // Second Version
-
+let Floor= 0 ;
+console.time('Challenge')
 fileData.forEach(element => {
-    
+
      // Third V. with Conditional Ternary Operator
-     element === "(" ? baseFloor++ : element === ')' ? baseFloor-- : baseFloor;
-     console.log("Floor Santa is: ", baseFloor)
+     element === "(" ? Floor++ : element === ')' ? Floor-- : Floor;
 
     // If version
     // if(element === "(")
@@ -33,6 +33,7 @@ fileData.forEach(element => {
     //     }
 });
 console.timeEnd("Challenge");
+console.log("Floor is: ", Floor)
 
 // First Version
 // for(i=0; i<fileData.length; i++){
@@ -48,3 +49,7 @@ console.timeEnd("Challenge");
 //         console.log("Floor Santa is: ", baseFloor)
 // }
 // console.timeEnd("Challenge");
+
+// ------------------------------------------------------
+// Time to run: 0.8s , time for Andrei's code : 0.5s, took a bit first because I was logging the results in the loop
+

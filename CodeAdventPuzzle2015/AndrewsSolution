@@ -1,0 +1,21 @@
+const fs = require('fs');
+
+
+function q1() {
+    fs.readFile('./input.txt', (err, data) =>{
+        console.time("santa-timer");
+        const direction = data.toString().split('');
+
+        const answer = direction.reduce((acc, curValue) =>{
+            if (curValue === '(' ){
+                return acc += 1;
+            } else if  (curValue === ')' ){
+                return acc -= 1;
+            }
+        }, 0)
+        console.timeEnd("santa-timer")
+        console.log("Floor: ", answer);
+    })
+}
+
+q1();
