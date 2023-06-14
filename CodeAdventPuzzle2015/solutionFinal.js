@@ -24,7 +24,7 @@ function question2(){
         } 
 
         if(Floor === -1){
-            answer = index+1;
+            answer = index + 1;
             console.log("Position Answer is: " + answer + ", Floor is: " + Floor);
             return;
         }

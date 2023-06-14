@@ -18,4 +18,30 @@ function q1() {
     })
 }
 
-q1();
+function q2(){
+    fs.readFile('./input.txt', (err, data) =>{
+        console.time("santa-timer");
+        const direction = data.toString().split('');
+        let floor = 0;
+        let answer = null;
+        for( i = 0; i <= direction.length; i++){
+            const element = direction[i];
+
+            if (element === '(' ){
+                floor += 1;
+            } 
+            
+            else if  (element === ')' ){
+                floor -= 1;
+            }
+
+            if (floor === -1){
+                answer = i+1;
+                break;
+            }
+        }
+        console.log("Position = " + answer + " and floor = " + floor);
+});
+}
+
+q2();
